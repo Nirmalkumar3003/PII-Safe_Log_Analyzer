@@ -1,0 +1,183 @@
+/* GLOBAL RESETS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #ffffff;
+  color: #111111;
+}
+
+/* APP CONTAINER */
+.app-container {
+  max-width: 1200px;
+  margin: 32px auto;
+  padding: 0 20px;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.app-header h1 {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.app-header p {
+  font-size: 1.05rem;
+  color: #4b5563;
+}
+
+/* INPUT SECTION */
+.input-section {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .input-section {
+    flex-direction: column;
+  }
+}
+
+.analyze-button {
+  background-color: #2563eb;
+  color: white;
+  font-size: 16px;
+  padding: 14px 26px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.25s ease;
+  align-self: flex-start;
+}
+
+.analyze-button:disabled {
+  background-color: #93c5fd;
+  cursor: not-allowed;
+}
+
+.analyze-button:hover:not(:disabled) {
+  background-color: #1d4ed8;
+}
+
+/* LOG SECTIONS */
+.results-section {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+@media (max-width: 900px) {
+  .results-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* TERMINAL-STYLE CLEAN BOXES */
+.log-box {
+  background: #000000;
+  color: #ffffff;
+  padding: 18px;
+  border-radius: 8px;
+  height: 360px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  font-family: "Consolas", "Monaco", monospace;
+  font-size: 14px;
+  border: 1px solid #444;
+}
+
+.user-logs {
+  background-color: #111;
+}
+
+.masked-logs {
+  background-color: #000;
+}
+
+/* SUMMARY BAR */
+.summary {
+  grid-column: 1 / -1;
+  margin-top: 20px;
+  padding: 16px;
+  border-radius: 6px;
+  background: #f3f4f6;
+  font-weight: 600;
+  font-size: 16px;
+  color: #374151;
+  text-align: center;
+}
+
+/* AI REPLY BOX */
+.ai-reply-container {
+  margin-top: 40px;
+  padding: 22px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+.ai-reply-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #111111;
+}
+
+.ai-reply-box {
+  min-height: 200px;
+  padding: 16px;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+
+  color: #000000 !important; /* YOU REQUESTED THIS */
+  font-family: 'Consolas', monospace;
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
+
+/* FILE UPLOAD BOX */
+.file-upload-section {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.file-drop-area {
+  border: 2px dashed #cbd5e1;
+  border-radius: 8px;
+  padding: 24px;
+  text-align: center;
+  color: #475569;
+  background: #f8fafc;
+  transition: 0.2s ease;
+}
+
+.file-drop-area.drag-active {
+  background: #e0f2fe;
+  border-color: #0284c7;
+  color: #0369a1;
+}
+
+/* NO RIGHT SCROLL FIX FOR ALL COMPONENTS */
+.container,
+.log-section,
+.preview-grid,
+.originalLogs,
+.maskedLogs,
+.ai-reply-container {
+  max-width: 100%;
+  overflow-x: hidden;
+}
